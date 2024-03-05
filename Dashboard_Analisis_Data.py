@@ -7,6 +7,7 @@ df = pd.read_csv('all_data.csv')
 
 # Split the data into dataframes for each station
 stations = df['station'].unique()
+df.columns = df.columns.str.strip()
 dataframes = {station: df[df['station'] == station] for station in stations}
 
 # Create a select box in the sidebar
